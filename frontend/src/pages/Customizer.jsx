@@ -9,13 +9,15 @@ import { downloadCanvasImage, reader } from '../config/helpers';
 import { Editor, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
 
+import { AIPicker, ColorPicker, CustomButton, FilePicker, Tab } from '../components'
 
 const Customizer = () => {
   return (
-    <div>
-      
-    </div>
-  )
+    <AnimatePresence>
+
+    </AnimatePresence>  
+    
+)
 }
 
 export default Customizer
