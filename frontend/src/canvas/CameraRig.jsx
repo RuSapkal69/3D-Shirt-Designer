@@ -8,13 +8,19 @@ const CameraRig = ({children}) => {
   const group = useRef();
   const snap = useSnapshot(state);
 
-  easing.dampE(
-    group.current.rotation,
-    [state.pointer.y / 10, -state.pointer.x / 5, 0],
-    0.25,
-  )
+  useFrame((state, delta) => {
+    //setting model rotation
+    easing.dampE(
+      group.current.rotation,
+      [state.pointer.y / 10, -state.pointer.x / 5, 0],
+      0.25,
+      delta
+    )
+  })
+
+  
   return (
-    <group>
+    <group ref={group}>
       {children}
     </group>
   )
