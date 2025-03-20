@@ -1,9 +1,9 @@
-import React from 'react'
-import { easing } from 'maath'
-import { useFrame } from '@react-three/fiber'
-import { useSnapshot } from 'valtio'
-import {Decal, useGLTF, useTexture} from '@react-three/drei'
-import state from '../store'
+import React from 'react';
+import { easing } from 'maath';
+import { useFrame } from '@react-three/fiber';
+import { useSnapshot } from 'valtio';
+import { Decal, useGLTF, useTexture } from '@react-three/drei';
+import state from '../store';
 
 const Shirt = () => {
   const snap = useSnapshot(state);
@@ -16,42 +16,38 @@ const Shirt = () => {
     easing.dampC(materials.lambert1.color, snap.color, 0.25, delta));
 
   const stateString = JSON.stringify(snap);
-  
 
   return (
-    <group 
-    key={stateString}>
+    <group key={stateString}>
       <mesh
-      castShadow
-      geometry = {nodes.T_Shirt_male.geometry}
-      material={materials.lambert1}
-      material-roughness={1}
-      dispose={null}
+        castShadow
+        geometry={nodes.T_Shirt_male.geometry}
+        material={materials.lambert1}
+        material-roughness={1}
       >
-        {snap.isFullTexture && (
+        {snap.isFullTexture && fullTexture && (
           <Decal
-          position={[0, 0, 0]}
-          rotation={[0, 0, 0]}
-          scale={1}
-          map={fullTexture}
+            position={[0, 0, 0]}
+            rotation={[0, 0, 0]}
+            scale={1}
+            map={fullTexture}
           />
         )}
 
-        {snap.isLogoTexture && (
+        {snap.isLogoTexture && logoTexture && (
           <Decal
-          position={[0, 0.04, 0.15]}
-          rotation={[0, 0, 0]}
-          scale={0.15}
-          map={logoTexture}
-          map-anisotropy={16}
-          depthTest={false}
-          depthWrite={true}
+            position={[0, 0.04, 0.15]}
+            rotation={[0, 0, 0]}
+            scale={0.15}
+            map={logoTexture}
+            anisotropy={16}
+            depthTest={false}
+            depthWrite={true}
           />
         )}
-
       </mesh>
     </group>
-  )
-}
+  );
+};
 
-export default Shirt
+export default Shirt;
