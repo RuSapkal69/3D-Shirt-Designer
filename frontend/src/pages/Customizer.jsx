@@ -51,6 +51,9 @@ const Customizer = () => {
         }
     }
 
+    const handleActiveFilterTab = (tabName) => {
+        setActiveFilterTab((prev) => ({ ...prev, [tabName]: true }));
+    }
 
     const readFile = (type) => {
         reader(file)
