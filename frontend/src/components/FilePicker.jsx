@@ -1,4 +1,5 @@
 import React from 'react'
+import CustomButton from './CustomButton'
 
 const FilePicker = ({file, setFile, readFile}) => {
   return (
@@ -17,6 +18,20 @@ const FilePicker = ({file, setFile, readFile}) => {
         <p className='mt-2 text-gray-500 text-sm truncate'>
           {file === '' ? 'No file selected' : file.name}
         </p>
+      </div>
+      <div className='mt-4 flex flex-wrap gap-3'>
+        <CustomButton 
+        type='outline'
+        title='Logo'
+        handleClick={() => readFile('logo')}
+        customStyles='text-xs'
+        />
+        <CustomButton
+        type='outline'
+        title='Full'  
+        handleClick={() => readFile('full')}
+        customStyles='text-xs'
+        />
       </div>
     </div>
   )
