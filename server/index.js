@@ -47,3 +47,21 @@ app.post('/api/v1/dalle', async (req, res) => {
   }
 });
 
+app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
+app.use('/public/assets', express.static(path.join(__dirname, 'public/assets')));
+app.use('/public/assets/threejs', express.static(path.join(__dirname, 'public/assets/threejs')));
+app.use('/public/assets/threejs/models', express.static(path.join(__dirname, 'public/assets/threejs/models')));
+app.use('/public/assets/threejs/models/gltf', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf')));
+app.use('/public/assets/threejs/models/gltf/scene.gltf', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene.gltf')));
+app.use('/public/assets/threejs/models/gltf/scene.bin', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene.bin')));
+app.use('/public/assets/threejs/models/gltf/scene0.bin', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene0.bin')));
+app.use('/public/assets/threejs/models/gltf/scene1.bin', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene1.bin')));
+app.use('/public/assets/threejs/models/gltf/scene2.bin', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene2.bin')));
+app.use('/public/assets/threejs/models/gltf/scene3.bin', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene3.bin')));
+app.use('/public/assets/threejs/models/gltf/scene4.bin', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene4.bin')));
+app.use('/public/assets/threejs/models/gltf/scene5.bin', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene5.bin')));
+
+
+
+app.use('/public/assets/threejs/models/gltf/scene6.bin', express.static(path.join(__dirname, 'public/assets/threejs/models/gltf/scene6.bin')));
+
